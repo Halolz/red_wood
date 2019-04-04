@@ -1,0 +1,84 @@
+<!-- index.wxml -->
+<view class="container {{coverShow ? '' : 'fixed'}}">
+  <swiper indicator-dots="false" indicator-active-color="white" autoplay="true" circular="ture" class="swiper_banner">
+    <block wx:for="{{banner.imgUrls}}" wx:key="{{index}}">
+      <swiper-item class="banner">
+        <image src="{{item}}" mode="aspectFill" class="slide-image" lazy-load="true" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="content">
+    <swiper indicator-dots="false" indicator-active-color="orangered" class="list_classify">
+      <swiper-item class="list">
+        <view class="list_item" bindtap="getAllProducts">
+          <i-avatar src="https://7465-test-8ad8df-1258960296.tcb.qcloud.la/banner/banner.jpeg?sign=e8840199871860800fda48b8bf306a9f&t=1554260297" size="large"></i-avatar>
+          <text>全部</text>
+        </view>
+          <view class="list_item" bindtap="showQRCode">
+            <i-avatar src="/pages/images/3Dpreview.jpeg" size="large"></i-avatar>
+            <text>3D预览</text>
+          </view>
+        <block wx:for="{{categoriesFirst}}" wx:key="{{index}}">
+          <view class="list_item" bindtap="getSecondCategory" data-name="{{item.name}}">
+            <i-avatar src="{{item.imgUrl}}" size="large"></i-avatar>
+            <text>{{item.name}}</text>
+          </view>
+        </block>
+      </swiper-item>
+      <swiper-item class="list">
+        <block wx:for="{{categoriesSecond}}" wx:key="{{index}}">
+          <view class="list_item" bindtap="getSecondCategory" data-name="{{item.name}}">
+            <i-avatar src="{{item.imgUrl}}" size="large"></i-avatar>
+            <text>{{item.name}}</text>
+          </view>
+        </block>
+      </swiper-item>
+    </swiper>
+    <view class="category_list">
+      <block wx:for="{{categoryList}}" wx:key="{{index}}">
+        <text bindtap="getSingleCategoryProducts" data-name="{{item}}">{{item}}</text>
+      </block>
+    </view>
+    <view class="commodity">
+      <block wx:for="{{productList}}" wx:key="{{index}}">
+        <view class="col_commod">
+          <navigator class="" target="" url="/pages/detail/detail?name={{item.name}}" hover-class="navigator-hover"
+            open-type="navigate">
+            <view class="v_img">
+              <image src="{{item.url}}" mode="aspectFill" lazy-load="true" />
+            </view>
+            <text class="title">{{item.name}}</text>
+            <text class="button {{!item.isCustom ? 'redbag' : 'redcol'}}">{{!item.isCustom ? '价格定制' : '价格请咨询'}}</text>
+          </navigator>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="cover_img" hidden="{{coverShow}}">
+    <view class='swipercontent'>
+      <swiper autoplay="true" current="{{swiperCurrent}}" bindchange="swiperChange">
+        <block wx:for="{{swiperbaner}}" wx:key="unique">
+          <navigator url="/pages/detail/detail?name={{item.name}}&url={{item.url}}">
+            <swiper-item>
+              <image src="{{item.url}}" mode="aspectFill" class="slide-image" lazy-load="true" />
+            </swiper-item>
+          </navigator>
+        </block>
+      </swiper>
+      <view class="dots">
+        <block wx:for="{{swiperbaner}}" wx:key="unique">
+          <image src="{{item.url}}" mode="aspectFill" bindtap="chuangEvent"
+            class="dot{{index == swiperCurrent ? ' active' : ''}}" id="{{index}}" lazy-load="true" />
+        </block>
+      </view>
+    </view>
+    <cover-image bindtap="coverHidden" src="../images/close.png" mode="widthFix" class="i_close" />
+  </view>
+  <view class="qrcode_img" hidden="{{coverQRCode}}">
+    <view class='swipercontent'>
+      <image src="/pages/images/3Dpreview.jpeg" mode="widthFix" bindtap="previewImage" data-src="/pages/images/3Dpreview.jpeg" lazy-load="true" />
+      <text>截图-微信扫一扫·查看3D效果</text>
+    </view>
+    <cover-image bindtap="hideQRCode" src="../images/close.png" mode="widthFix" class="i_close" />
+  </view>
+</view>

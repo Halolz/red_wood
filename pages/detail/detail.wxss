@@ -1,0 +1,71 @@
+/* pages/detail/detail.wxss */
+.content {
+  text-align: center;
+  padding: 30rpx;
+  background: #fff;
+  margin-top: 30rpx;
+  border-radius: 30rpx;
+}
+
+text.h1 {
+  font-size: 32rpx;
+  display: block;
+}
+
+image.issue {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 30rpx;
+}
+
+.details {
+  margin-bottom: 20rpx;
+}
+.content view {
+  position: relative;
+}
+.content view > .detail_input {
+  text-align: left;
+  border: 2px solid #aaa;
+  margin: 20rpx 0;
+  border-radius: 10rpx;
+  /* text-indent: 1em; */
+  padding-left:1em; 
+}
+
+.content view > text.assist {
+  position: absolute;
+  right: 10rpx;
+  top: 14rpx;
+  color: #999;
+}
+
+.content view > .dropdown {
+  position: absolute;
+  right: 10rpx;
+  top: 14rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.content button.detail_bth {
+  width: 90%;
+  margin-top: 30rpx;
+  background-color: orangered;
+  color: #fff;
+}
+
+.content button.detail_bth_hover {
+  background: pink;
+}
+
+image.detail_img {
+  /* width: 70%; */
+  height: 320rpx;
+  margin: 20rpx 0;
+}
+
+image.only_img {
+  width: 100%;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,47 @@
+<!-- pages/detail/detail.wxml -->
+<view class="content">
+  <text class="h1" wx:if="{{ onlyImg.name }}">{{onlyImg.name}}</text>
+  <form bindsubmit="submit" class="form" wx:if="{{ !onlyImg.url }}">
+    <text class="h1">{{productDetail.name}}</text>
+    <image src="../images/issue.png" mode="widthFix" class="issue"></image>
+    <view class="details" wx:if="{{ !productDetail.detail.isCustom}}">
+      建议尺寸（米）：{{ productDetail.detail.width ? '宽(' + productDetail.detail.width + ')' : ''}}
+      {{ productDetail.detail.long ? '长(' + (productDetail.detail.long) + ')' : ''}}
+      {{ productDetail.detail.height ? '高(' + productDetail.detail.height + ')' : ''}}
+      {{ productDetail.detail.permiter ? '周长(' + productDetail.detail.permiter + ')' : ''}}
+    </view>
+    <view class="details" wx:if="{{ productDetail.detail.isCustom}}">
+      定制
+    </view>
+    <view class="detail_Width"
+      wx:if="{{productDetail.detail.width || productDetail.detail.permiter || productDetail.detail.isCustom}}">
+      <input value="{{ width }}" type="digit" mode="wrapped" maxlength="4" placeholder="请输入宽度" class="detail_input"
+        name="width" />
+      <text class="assist">单位：M</text>
+    </view>
+    <view class="detail_height" wx:if="{{productDetail.detail.height || productDetail.detail.isCustom}}">
+      <input value="{{ height }}" type="digit" mode="wrapped" maxlength="4" placeholder="请输入高度" class="detail_input"
+        name="height" />
+      <text class="assist">单位：M</text>
+    </view>
+    <view class="detail_long"
+      wx:if="{{productDetail.detail.long || productDetail.detail.permiter || productDetail.detail.isCustom}}">
+      <input value="{{ height }}" type="digit" mode="wrapped" maxlength="4" placeholder="请输入长度" class="detail_input"
+        name="long" />
+      <text class="assist">单位：M</text>
+    </view>
+    <view class="detail_classes" bindtap="toggleBottomPopup">
+      <input value="{{ materialName }}" disabled class="detail_input" />
+      <image src="../images/dropdown.png" mode="widthFix" class="assist dropdown"></image>
+    </view>
+    <button class="detail_bth" hover-class="detail_bth_hover" formType="submit">询价</button>
+    <image src="{{ productDetail.detail.url }}" mode="aspectFit" class="detail_img"></image>
+  </form>
+  <image wx:if="{{ onlyImg }}" src="{{ onlyImg.url }}" mode="widthFix" class="only_img"></image>
+</view>
+<!-- 上拉窗口 -->
+<van-popup show="{{ show.bottom }}" position="bottom" bind:close="toggleBottomPopup">
+  <van-picker show-toolbar columns="{{ materialList }}" bind:confirm="getMaterial" bind:cancel="onCancel" />
+</van-popup>
+<!-- 弹出框 -->
+<van-dialog id="van-dialog" />

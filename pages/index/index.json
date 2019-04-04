@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "i-avatar": "../../components/iview_dist/avatar/index",
+        "i-icon": "../../components/iview_dist/icon/index"
+    }
+}

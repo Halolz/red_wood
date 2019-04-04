@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-popup": "../../components/vant_dist/popup/index",
+    "van-picker": "../../components/vant_dist/picker/index",
+    "i-input": "../../components/iview_dist/input/index",
+    "van-dialog": "../../components/vant_dist/dialog/index"
+  }
+}

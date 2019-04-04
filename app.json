@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "地天泰集团红木定制",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8f8f8"
+  }
+}

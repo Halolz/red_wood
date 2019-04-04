@@ -1,0 +1,159 @@
+.cover_img, .qrcode_img {
+  width: 100%;
+  height: 100vh;
+  background: rgba(10, 10, 10, .3);
+  vertical-align: middle;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.qrcode_img .swipercontent {
+  width: 600rpx;
+  background: white;
+  border-radius: 20rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100rpx;
+  padding-bottom: 60rpx;
+}
+.qrcode_img .swipercontent image{
+  width: 60%;
+}
+.qrcode_img .swipercontent text{
+  color: grey;
+  margin-top:60rpx;
+}
+.swipercontent swiper {
+  height: 700rpx;
+}
+
+.cover_img .swipercontent {
+  width: 600rpx;
+  background: #f8f8f8;
+}
+
+.dots {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 10rpx 0 0;
+}
+
+.dot {
+  width: 196rpx;
+  height: 200rpx;
+  transition: all .6s;
+  opacity: .6;
+}
+
+.dot.active {
+  opacity: 1;
+}
+
+.cover_img .i_close, .qrcode_img .i_close {
+  width: 100rpx;
+  display: inline-block;
+  height: 100rpx;
+}
+
+.list_classify {
+  margin: 20rpx 0;
+  border-radius: 20rpx;
+  background: #fff;
+  height: 176px;
+}
+
+.list_classify .list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 150px !important;
+}
+
+.list .list_item {
+  width: 140rpx;
+  vertical-align: middle;
+  text-align: center;
+  padding: 20rpx 0 0;
+}
+
+.list_item text {
+  display: inherit;
+  margin-top: 10rpx;
+}
+
+.category_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category_list text {
+  padding: 10rpx 20rpx;
+  margin: 10rpx;
+  background: #fff;
+  border-radius: 40rpx;
+}
+
+.commodity {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.commodity .col_commod {
+  background: #fff;
+  border-radius: 20rpx;
+  width: 48%;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+
+}
+
+.col_commod .v_img {
+  height: 280rpx;
+  width: 340rpx;
+}
+
+
+.col_commod image {
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.col_commod text {
+  font-size: 20rpx;
+  margin: 10rpx 20rpx 20rpx;
+
+}
+
+.col_commod text.title {
+  display: block;
+}
+
+.col_commod text.button {
+  margin-bottom: 10rpx;
+  display: inline-block;
+}
+
+.col_commod text.redbag {
+  color: #fff;
+  padding: 0 10rpx;
+  background: orangered;
+}
+
+.col_commod text.redcol {
+  color: orangered;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
